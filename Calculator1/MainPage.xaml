@@ -1,0 +1,175 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Calculator1.MainPage">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"></RowDefinition>
+            <RowDefinition Height="100"></RowDefinition>
+            <RowDefinition Height="100"></RowDefinition>
+            <RowDefinition Height="100"></RowDefinition>
+            <RowDefinition Height="100"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="100"></ColumnDefinition>
+            <ColumnDefinition Width="100"></ColumnDefinition>
+            <ColumnDefinition Width="100"></ColumnDefinition>
+            <ColumnDefinition Width="100"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Label
+            x:Name="lbl"
+            Grid.Row="0"
+            Grid.ColumnSpan="4"
+            BackgroundColor="Gray">
+        </Label>
+        <Button
+            Grid.Row="1" 
+            Grid.Column="0"
+            CornerRadius="60"
+            HeightRequest="80"
+            WidthRequest="80"
+            Text="7"
+            Clicked="OnCounterClicked">
+
+        </Button>
+        <Button
+             Clicked="OnCounterClicked"
+            Grid.Row="1" 
+            Grid.Column="1"
+            CornerRadius="60"
+            HeightRequest="80"
+            WidthRequest="80"
+            Text="8">
+        </Button>
+        <Button
+             Clicked="OnCounterClicked"
+            Grid.Row="1" 
+            Grid.Column="2"
+            CornerRadius="60"
+            HeightRequest="80"
+            WidthRequest="80"
+            Text="9">
+        </Button>
+        <Button
+             Clicked="OnCounterClicked"
+            Grid.Row="2" 
+            Grid.Column="0"
+            CornerRadius="60"
+            HeightRequest="80"
+            WidthRequest="80"
+            Text="4">
+        </Button>
+        <Button
+             Clicked="OnCounterClicked"
+            Grid.Row="2" 
+            Grid.Column="1"
+            CornerRadius="60"
+            HeightRequest="80"
+            WidthRequest="80"
+            Text="5">
+        </Button>
+        <Button
+             Clicked="OnCounterClicked"
+            Grid.Row="2" 
+            Grid.Column="2"
+            CornerRadius="60"
+            HeightRequest="80"
+            WidthRequest="80"
+            Text="6">
+        </Button>
+        <Button
+             Clicked="OnCounterClicked"
+            Grid.Row="3" 
+            Grid.Column="0"
+            CornerRadius="60"
+            HeightRequest="80"
+            WidthRequest="80"
+            Text="1">
+        </Button>
+        <Button
+             Clicked="OnCounterClicked"
+            Grid.Row="3" 
+            Grid.Column="1"
+            CornerRadius="60"
+            HeightRequest="80"
+            WidthRequest="80"
+            Text="2">
+        </Button>
+        <Button
+             Clicked="OnCounterClicked"
+            Grid.Row="3" 
+            Grid.Column="2"
+            CornerRadius="60"
+            HeightRequest="80"
+            WidthRequest="80"
+            Text="3">
+        </Button>
+        <Button
+            Grid.Row="4" 
+            Grid.Column="0"
+            CornerRadius="60"
+            HeightRequest="80"
+            WidthRequest="80"
+            Text="0">
+        </Button>
+        <Button
+            Grid.Row="4" 
+            Grid.Column="1"
+            CornerRadius="60"
+            HeightRequest="80"
+            WidthRequest="80"
+            Text=".">
+        </Button>
+        <Button
+            Clicked="OnEqualClicked"
+            Grid.Row="4" 
+            Grid.Column="2"
+            CornerRadius="60"
+            HeightRequest="80"
+            WidthRequest="80"
+            Text="=">
+        </Button>
+        <Button
+            Clicked="OnActionsClicked"
+            Grid.Row="1" 
+            Grid.Column="3"
+            CornerRadius="60"
+            HeightRequest="80"
+            WidthRequest="80"
+            Text="/">
+        </Button>
+        <Button
+            Clicked="OnActionsClicked"
+            Grid.Row="2" 
+            Grid.Column="3"
+            CornerRadius="60"
+            HeightRequest="80"
+            WidthRequest="80"
+            Text="x">
+        </Button>
+        <Button
+            Clicked="OnActionsClicked"
+            Grid.Row="3" 
+            Grid.Column="3"
+            CornerRadius="60"
+            HeightRequest="80"
+            WidthRequest="80"
+            Text="-">
+        </Button>
+        <Button
+            Clicked="OnActionsClicked"
+            Grid.Row="4" 
+            Grid.Column="3"
+            CornerRadius="60"
+            HeightRequest="80"
+            WidthRequest="80"
+            Text="+">
+        </Button>
+
+
+
+    </Grid>
+
+</ContentPage>
