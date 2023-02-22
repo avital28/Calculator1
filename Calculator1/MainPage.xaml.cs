@@ -71,6 +71,7 @@ public partial class MainPage : ContentPage
                 }
             }
             
+            
             for (int i = 0; i < nums1.Count; i++)
             {
                 if (nums1[i] == 0)
