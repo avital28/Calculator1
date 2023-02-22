@@ -4,7 +4,6 @@ public partial class MainPage : ContentPage
 {
     int count = 0;
     List<double> nums1 = new List<double>();
-    List<double> nums2 = new List<double>();
     List<char> operators1 = new List<char>();
     List<char> operators2 = new List<char>();
     string result = "";
@@ -49,12 +48,7 @@ public partial class MainPage : ContentPage
             {
                 operators2.Add(operators1[i]);
             }
-            for (int i = 0; i < nums1.Count; i++)
-            {
-                nums2.Add(nums1[i]);
-            }
             lbl.Text += "=";
-            int current = 0;
             int length = operators1.Count;
             for (int i = 0; i < length; i++)
             {
@@ -63,24 +57,8 @@ public partial class MainPage : ContentPage
                     res = nums1[i] * nums1[i + 1];
                     nums1[i] = 0;
                     nums1[i + 1] = res;
-                    if (i + 1 >= nums2.Count)
-                    {
-                        nums2[i - 1] = res;
-                        nums2.RemoveAt(i);
-                        
-                    }
-
-
-                    else
-                    {
-                        nums2[i + 1] = 0;
-                        nums2[i] = res;
-                        
-                    }
                     if (i < operators2.Count)
                         operators2[i] = '^';
-                    
-                    current = i+1;
                 }
 
                 else if (operators1[i] == '/')
@@ -88,56 +66,42 @@ public partial class MainPage : ContentPage
                     res = nums1[i] / nums1[i + 1];
                     nums1[i] = 0;
                     nums1[i + 1] = res;
-                    if (i + 1 >= nums2.Count)
-                    {
-                        nums2[i - 1] = res;
-                        nums2.RemoveAt(i);
-
-                    }
-
-
-                    else
-                    {
-                        nums2[i + 1] = 0;
-                        nums2[i] = res;
-
-                    }
                     if (i < operators2.Count)
                         operators2[i] = '^';
-
-                    current = i + 1;
                 }
             }
             
-            for (int i = 0; i < nums2.Count; i++)
+            for (int i = 0; i < nums1.Count; i++)
             {
-                if (nums2[i]==0)
-                    nums2.RemoveAt(i);
+                if (nums1[i] == 0)
+                {
+                    nums1.RemoveAt(i);
+                    i--;
+                }
             }
 
             for (int i = 0; i < operators2.Count; i++)
             {
                 if (operators2[i] == '^')
+                {
                     operators2.RemoveAt(i);
+                    i--;
+                }
             }
             for (int i = 0; i < operators2.Count; i++)
             {
                 if (operators2[i] == '+')
                 {
-                    res = nums2[i] + nums2[i+1];
-                    nums2[i + 1] = res;
+                    res = nums1[i] + nums1[i+1];
+                    nums1[i + 1] = res;
                 }
 
                 else if (operators2[i] == '-')
                 {
-                    res = nums2[i] - nums2[i + 1];
-                    nums2[i + 1] = res;
+                    res = nums1[i] - nums1[i + 1];
+                    nums1[i + 1] = res;
                 }
             }
-           // if (operators[operators.Count - 1] == '+')
-           //     res += nums[operators.Count];
-           // else if (operators[operators.Count - 1] == '-')
-              //  res -= nums[operators.Count];
 
             lbl.Text += res;
         }
