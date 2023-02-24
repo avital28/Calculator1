@@ -7,6 +7,7 @@ public partial class MainPage : ContentPage
     List<char> operators1 = new List<char>();
     List<char> operators2 = new List<char>();
     string result = "";
+    string equation = "";
     double res;
 
 
@@ -18,7 +19,8 @@ public partial class MainPage : ContentPage
     private void OnCounterClicked(object sender, EventArgs e)
     {
         Button b = (Button)(sender);
-        result += b.Text;
+        result = b.Text;
+        equation += b.Text;
         lbl.Text += result;
     }
 
@@ -27,13 +29,13 @@ public partial class MainPage : ContentPage
         int a;
         a = int.Parse(b);
         count++;
-        result = "";
+        equation = "";
         return a;
     }
 
     private void OnActionsClicked(object sender, EventArgs e)
     {
-        nums1.Add(TextToNum(result));
+        nums1.Add(TextToNum(equation));
         Button b = (Button)(sender);
         operators1.Add(char.Parse(b.Text));
         lbl.Text += b.Text;
@@ -41,7 +43,7 @@ public partial class MainPage : ContentPage
 
     private void OnEqualClicked(object sender, EventArgs e)
     {
-        nums1.Add(TextToNum(result));
+        nums1.Add(TextToNum(equation));
         if (count > 1)
         {
             for (int i = 0; i < operators1.Count; i++)
