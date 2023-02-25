@@ -95,7 +95,8 @@ public partial class MainPage : ContentPage
                     {
                         lbl.Text = "Syntax error";
                         DividedByZero = true;
-                    }                 
+                    }         
+                    
                 }
             }
 
@@ -135,6 +136,10 @@ public partial class MainPage : ContentPage
                 }
                 lbl.Text += " " + res;
             }
+            else
+                DividedByZero = false;
+
+
 
            
         }
